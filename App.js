@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -14,9 +14,6 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-
-        
-
       <Text style={styles.title}>Faça o login</Text>
 
       <Text style={styles.label}>Usuário</Text>
@@ -27,7 +24,7 @@ const LoginScreen = () => {
         onChangeText={setEmail}
       />
 
-      <Text style={styles.label}>Usuário</Text>
+      <Text style={styles.label}>Senha</Text>
       <TextInput
         style={styles.input}
         placeholder="Senha"
@@ -35,7 +32,12 @@ const LoginScreen = () => {
         value={password}
         onChangeText={setPassword}
       />
-      <Button title="Entrar" onPress={handleLogin} />
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={handleLogin}
+      >
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -67,8 +69,21 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: '#000',
     textAlign:'justify',
+  },
+  button: {
+    width: '65%',
+    height: 40,
+    backgroundColor: '#084D75',
+    borderRadius: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: 0,
+    marginTop: 20 // Adicionando um espaço entre o input e o botão
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
   }
-
 });
 
 export default LoginScreen;

@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native'; // Importe o componente Image
+
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
   input2: {
     width: '45%',
     height: 22,
-    marginBottom: 6,
+    marginBottom: 8,
     paddingHorizontal: 9,
     borderBottomWidth: 1, // Apenas a borda inferior
     borderColor: '#000000', // Cor da borda inferior

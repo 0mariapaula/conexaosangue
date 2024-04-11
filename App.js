@@ -42,7 +42,7 @@ const LoginScreen = () => {
         style={styles.button} 
         onPress={handleLogin}
       >
-        <Text style={styles.buttonText}>Entrar</Text>
+        <Text style={styles.buttonTextB}>Entrar</Text>
       </TouchableOpacity>
 
         <View style={styles.entrada}>
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: '#000',
     textAlign:'justify',
+    fontWeight: 'bold',
   },
   button: {
     width: '50%',
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     bottom: 0,
-    marginTop: 20 // Adicionando um espaço entre o input e o botão
+    marginTop: 20 // Adicionando um espaço entre o input e o botão 
   },
   buttonText: {
     color: '#084D75',
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
   input2: {
     width: '45%',
     height: 22,
-    marginBottom: 2,
+    marginBottom: 6,
     paddingHorizontal: 9,
     borderBottomWidth: 1, // Apenas a borda inferior
     borderColor: '#000000', // Cor da borda inferior
@@ -149,6 +150,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     top: 140,
     gap: 16,
+  },
+  buttonTextB: {
+    color: '#084D75',
+    fontSize: 20,
+    fontWeight: 'bold',
+    
   }
 });
 

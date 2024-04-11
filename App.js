@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native'; // Importe o componente Image
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -14,12 +14,18 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Faça o login</Text>
+     
+     <View style={styles.inputContainer}></View>
+
+      <Image
+        style={styles.logo}
+        source={require('./assets/logo.png')} // Substitua pelo caminho da sua logo
+      />
 
       <Text style={styles.label}>Usuário</Text>
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Email" 
         value={email}
         onChangeText={setEmail}
       />
@@ -38,6 +44,23 @@ const LoginScreen = () => {
       >
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
+
+        <View style={styles.entrada}>
+
+            <Text style={styles.input2}>Esqueceu a senha</Text>
+            <Text style={styles.input2}> Primeiro acesso</Text>
+
+        </View>
+
+            <View style={styles.imglogo}>
+                <Image
+                source={require('/home/aluno/Projeto(ConexãoSangue)/conexaosangue/assets/Lgoogle.png')} 
+              />
+              <Image
+                source={require('/home/aluno/Projeto(ConexãoSangue)/conexaosangue/assets/Lfacebook.png')} 
+              />
+            </View>
+      
     </View>
   );
 };
@@ -54,15 +77,20 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
+  logo: {
+    width: 150,
+    height: 150,
+    marginBottom: 20,
+  },
   input: {
     width: '80%',
-    height: 40,
+    height: 50,
     borderWidth: 1,
     borderColor: '#cccccc',
     borderRadius: 50,
     paddingHorizontal: 10,
     marginBottom: 10,
-    backgroundColor: '#fff',
+    backgroundColor: '#D9D9D9',
   },
   label: {
     right : 110,
@@ -71,9 +99,9 @@ const styles = StyleSheet.create({
     textAlign:'justify',
   },
   button: {
-    width: '65%',
-    height: 40,
-    backgroundColor: '#084D75',
+    width: '50%',
+    height: 50,
+    backgroundColor: '#AADDDD',
     borderRadius: 35,
     alignItems: 'center',
     justifyContent: 'center',
@@ -81,8 +109,46 @@ const styles = StyleSheet.create({
     marginTop: 20 // Adicionando um espaço entre o input e o botão
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 16,
+    color: '#084D75',
+    fontSize: 20,
+  },
+  logo: {
+    margin:0,
+    padding : 0,
+    width: 200, // Ajuste conforme necessário
+    height: 130, // Ajuste conforme necessário
+    resizeMode: 'contain', // Garante que a imagem seja dimensionada corretamente
+    bottom: 50, // Adiciona espaço abaixo da imagem  
+  },
+
+  inputContainer: {
+    position: 'absolute', // Define a posição absoluta para que a view não afete o layout dos outros elementos
+    top: 230, // Posiciona a view no topo da tela
+    height : '100%', // Altura igual à altura da tela
+    width: '110%', // Largura igual à largura da tela
+    backgroundColor: '#fff',
+    borderRadius: 25, 
+  },
+  input2: {
+    width: '45%',
+    height: 22,
+    marginBottom: 2,
+    paddingHorizontal: 9,
+    borderBottomWidth: 1, // Apenas a borda inferior
+    borderColor: '#000000', // Cor da borda inferior
+    color: '#000000',
+    fontWeight: 'bold',
+    padding:0
+  },
+   entrada:{
+    margin: 0,
+    height :0,
+    top: 50,
+  },
+  imglogo: {
+    flexDirection: 'row',
+    top: 140,
+    gap: 16,
   }
 });
 

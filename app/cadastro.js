@@ -20,33 +20,39 @@ const Cadastro = () => {
 
       <Image style={styles.logo} source={require('./img/logo.png')}/>
 
-      <Text style={styles.label}>Usuário</Text>
+      <Text style={styles.label}>Nome Completo</Text>
       <TextInput
-        style={styles.input}
-        placeholder="Email" 
-        value={email}
-        onChangeText={setEmail}
-      />
+            style={styles.input}
+            placeholder="Insira um Nome"
+          />
 
-      <Text style={styles.label}>Senha</Text>
+      <Text style={styles.label}>Email</Text>
       <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        secureTextEntry={true}
-        value={password}
-        onChangeText={setPassword}
-      />
+            style={styles.input}
+            placeholder="Insira um email válido"
+          />
+      <Text style={styles.label}>Telefone</Text>
+      <TextInput
+            style={styles.input}
+            placeholder="Insira seu Telefone"
+          />
+
+          <View>
+          <Text style={styles.label}>Nome Completo</Text>
+
+          </View>
+
       <TouchableOpacity 
         style={styles.button} 
         onPress={handleLogin}
       >
-        <Text style={styles.buttonTextB}>Entrar</Text>
+        <Text style={styles.buttonTextB}>Cadastrar</Text>
       </TouchableOpacity>
 
         <View style={styles.entrada}>
 
-            <Text style={styles.input2}>Esqueceu a senha</Text>
-            <Text style={styles.input2}> Primeiro acesso</Text>
+            
+            <Text style={styles.input2}>Possuo cadastro</Text>
 
         </View>
 
@@ -97,24 +103,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     bottom: 0,
-    marginTop: 20 // Adicionando um espaço entre o input e o botão 
+    marginTop: 20, // Adicionando um espaço entre o input e o botão 
+    top:130,
   },
   buttonText: {
     color: '#084D75',
     fontSize: 20,
   },
   logo: {
+    
     margin:0,
     padding : 0,
     width: 200, // Ajuste conforme necessário
     height: 130, // Ajuste conforme necessário
     resizeMode: 'contain', // Garante que a imagem seja dimensionada corretamente
-    bottom: 50, // Adiciona espaço abaixo da imagem  
+    bottom: 140, // Adiciona espaço abaixo da imagem  
   },
 
   inputContainer: {
     position: 'absolute', // Define a posição absoluta para que a view não afete o layout dos outros elementos
-    top: 230, // Posiciona a view no topo da tela
+    top: 130, // Posiciona a view no topo da tela
     height : '100%', // Altura igual à altura da tela
     width: '110%', // Largura igual à largura da tela
     backgroundColor: '#fff',
@@ -134,7 +142,7 @@ const styles = StyleSheet.create({
    entrada:{
     margin: 0,
     height :0,
-    top: 50,
+    top: 140,
   },
   imglogo: {
     flexDirection: 'row',
@@ -146,6 +154,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     
+  },
+  input: {
+    width: '95%',
+    height: 40,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    borderBottomWidth: 1, // Apenas a borda inferior
+    borderColor: '#999', // Cor da borda inferior
   }
 });
 

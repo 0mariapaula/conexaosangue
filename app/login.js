@@ -52,7 +52,6 @@ const LoginScreen = () => {
                     <Text style={styles.input2}>Primeiro acesso</Text>
                 </TouchableOpacity>
             </View>
-
             <View style={styles.imglogo}>
                 <Image
                     source={require('./img/Lgoogle.png')}

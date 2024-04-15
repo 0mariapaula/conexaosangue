@@ -47,10 +47,14 @@ const LoginScreen = () => {
             </TouchableOpacity>
 
             <View style={styles.entrada}>
+            <TouchableOpacity onPress={() => navigation.navigate('EsqueceuSenha')}>
                 <Text style={styles.input2}>Esqueceu a senha</Text>
+             </TouchableOpacity>
+
                 <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
                     <Text style={styles.input2}>Primeiro acesso</Text>
                 </TouchableOpacity>
+
             </View>
             <View style={styles.imglogo}>
                 <Image

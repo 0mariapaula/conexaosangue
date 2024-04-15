@@ -47,14 +47,12 @@ const LoginScreen = () => {
             </TouchableOpacity>
 
             <View style={styles.entrada}>
-            <TouchableOpacity onPress={() => navigation.navigate('EsqueceuSenha')}>
-                <Text style={styles.input2}>Esqueceu a senha</Text>
-             </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-                    <Text style={styles.input2}>Primeiro acesso</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('EsqueceuSenha')}>
+                <Text style={styles.linkText}>Esqueceu a senha?</Text>
                 </TouchableOpacity>
-
+                <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
+                <Text style={styles.linkText}>Primeiro acesso?</Text>
+                </TouchableOpacity>
             </View>
             <View style={styles.imglogo}>
                 <Image
@@ -128,13 +126,30 @@ const styles = StyleSheet.create({
         padding: 0
     },
     entrada: {
-        margin: 0,
-        height: 0,
-        top: 50,
+        flexDirection: 'low', // Isso organiza seus botões em linha
+        justifyContent: 'space-around', // Isso os separa igualmente
+        marginTop: 20, // Dá um espaço acima dos botões
+       
+        //margin: 0,
+        //height: 0,
+        //top: 50,
     },
+    linkText: {
+        color: '#0000FF', // Isso é apenas um exemplo para torná-los visíveis como links
+        paddingVertical: 10, // Isso dá uma área tocável maior
+        
+      
+        marginBottom: 8,
+        paddingHorizontal: 9,
+        borderBottomWidth: 1,
+        borderColor: '#000000',
+        color: '#000000',
+        fontWeight: 'bold',
+        padding: 0
+    },    
     imglogo: {
         flexDirection: 'row',
-        top: 140,
+        top: 60,
         gap: 16,
     },
     buttonTextB: {

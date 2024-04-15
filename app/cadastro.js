@@ -20,28 +20,40 @@ const Cadastro = () => {
 
       <Image style={styles.logo} source={require('./img/logo.png')}/>
 
-      <Text style={styles.label}>Nome Completo</Text>
-      <TextInput
-            style={styles.input}
-            placeholder="Insira um Nome"
-          />
-
-      <Text style={styles.label}>Email</Text>
-      <TextInput
-            style={styles.input}
-            placeholder="Insira um email válido"
-          />
-      <Text style={styles.label}>Telefone</Text>
-      <TextInput
-            style={styles.input}
-            placeholder="Insira seu Telefone"
-          />
-
-          <View>
+      <View style={styles.rota} >
           <Text style={styles.label}>Nome Completo</Text>
+          <TextInput style={styles.input}placeholder="Insira um Nome"/>
 
-          </View>
+          <Text style={styles.label}>Email</Text>
+          <TextInput style={styles.input}placeholder="Insira um email válido"  />
 
+          <Text style={styles.label}>Telefone</Text>
+          <TextInput style={styles.input}placeholder="Insira seu Telefone"/>
+
+          <Text style={styles.label}>Criar senha</Text>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Senha"
+                            secureTextEntry={true}
+                            onChangeText={setPassword}
+                        />    
+                  <Text style={styles.label}>Confirmar senha</Text>
+                        <TextInput
+                            style={styles.input}
+                            placeholder="Senha"
+                            secureTextEntry={true}                           
+                            onChangeText={setPassword}
+                        /> 
+      </View>
+
+            <Text style={styles.labelS}>Tipo Sanguíneo</Text>
+
+              <TouchableOpacity style={styles.button2}onPress={handleLogin}>
+                <Text style={styles.buttonTextB}>Escolher </Text>
+              </TouchableOpacity>
+              <Text style={styles.a}>A+</Text>  
+            
+           
       <TouchableOpacity 
         style={styles.button} 
         onPress={handleLogin}
@@ -78,22 +90,28 @@ const styles = StyleSheet.create({
     height: 150,
     marginBottom: 20,
   },
-  input: {
-    width: '80%',
-    height: 50,
-    borderWidth: 1,
-    borderColor: '#cccccc',
-    borderRadius: 50,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-    backgroundColor: '#D9D9D9',
-  },
   label: {
+    padding: 10,
     right : 110,
     marginBottom: 5,
     color: '#000',
     textAlign:'justify',
     fontWeight: 'bold',
+  },
+  labelS: {
+    right : 120,
+    marginBottom: 5,
+    color: '#000',
+    textAlign:'justify',
+    fontWeight: 'bold',
+    top:36,
+  },
+  a:{
+color: '#DD3838',
+fontWeight: 'bold',
+bottom: 58,
+left: 167,
+
   },
   button: {
     width: '50%',
@@ -104,7 +122,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     bottom: 0,
     marginTop: 20, // Adicionando um espaço entre o input e o botão 
-    top:130,
+    bottom:30,
+  },
+  button2: {
+    width: '50%',
+    height: 50,
+    backgroundColor: '#AADDDD',
+    borderRadius: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: 0,
+    marginTop: 20, // Adicionando um espaço entre o input e o botão 
+    bottom:20,
+    left: 50,
   },
   buttonText: {
     color: '#084D75',
@@ -117,7 +147,7 @@ const styles = StyleSheet.create({
     width: 200, // Ajuste conforme necessário
     height: 130, // Ajuste conforme necessário
     resizeMode: 'contain', // Garante que a imagem seja dimensionada corretamente
-    bottom: 140, // Adiciona espaço abaixo da imagem  
+    bottom: -10, // Adiciona espaço abaixo da imagem  
   },
 
   inputContainer: {
@@ -142,7 +172,7 @@ const styles = StyleSheet.create({
    entrada:{
     margin: 0,
     height :0,
-    top: 140,
+    bottom: 10,
   },
   imglogo: {
     flexDirection: 'row',
@@ -156,13 +186,21 @@ const styles = StyleSheet.create({
     
   },
   input: {
+    
     width: '95%',
     height: 40,
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    marginBottom: 0,
+    paddingHorizontal: 80,
     borderBottomWidth: 1, // Apenas a borda inferior
     borderColor: '#999', // Cor da borda inferior
-  }
+    right: 100,
+    
+  },
+  rota: {
+    bottom: 0,
+    left: 80,
+  },
+  
 });
 
 export default Cadastro;

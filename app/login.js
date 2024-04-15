@@ -138,8 +138,8 @@ const styles = StyleSheet.create({
         color: '#0000FF', // Isso é apenas um exemplo para torná-los visíveis como links
         paddingVertical: 10, // Isso dá uma área tocável maior
         
-      
-        marginBottom: 8,
+        top: 40,
+        marginBottom: 0,
         paddingHorizontal: 9,
         borderBottomWidth: 1,
         borderColor: '#000000',
